@@ -37,7 +37,7 @@ public class Account {
         // -------------------- SIGN UP --------------------
 
         //Click [Sign Up Free] button
-        driver.findElement(By.xpath("//*[@id=\"ctl00_MainContent_PanelNotAuth\"]/div[2]/div[1]/div[3]/a/img")).click();
+        driver.findElement(By.xpath("//img[@src=\"/Images/design/pagesignup.png\"]")).click();
 
         //Set [Full Name] field
         driver.findElement(By.id("ctl00_MainContent_SignupControl1_TextBoxFullName")).sendKeys(mailName);
@@ -64,7 +64,7 @@ public class Account {
         // -------------------- LOGIN WITH NEW ACCOUNT --------------------
 
         //Click [Login] button
-        driver.findElement(By.xpath("//*[@id=\"ctl00_MainContent_PanelNotAuth\"]/div[2]/div[1]/div[2]/a/img")).click();
+        driver.findElement(By.xpath("//img[@src=\"/Images/design/pagelogin.png\"]")).click();
 
         //Set [Email] field
         driver.findElement(By.id("ctl00_MainContent_LoginControl1_TextBoxEmail")).sendKeys(mailName);
@@ -80,7 +80,7 @@ public class Account {
         // -------------------- CHANGE PASSWORD --------------------
 
         //Click [Settings] button
-        driver.findElement(By.xpath("//*[@id=\"ctl00_HeaderTopControl1_PanelHeaderButtons\"]/a[1]")).click();
+        driver.findElement(By.xpath("//a[@href=\"javascript:OpenSettingsDialog();\"]")).click();
 
         //Set [Old Password] field
         driver.findElement(By.id("TextPwOld")).sendKeys("12345");
@@ -89,7 +89,7 @@ public class Account {
         driver.findElement(By.id("TextPwNew")).sendKeys("123");
 
         //Click [Ok] button
-        driver.findElement(By.xpath("/html/body/div[9]/div[2]/div/button[1]/span")).click();
+        driver.findElement(By.xpath("//span[@class=\"ui-button-text\" and text()=\"Ok\"]")).click();
 
         Thread.sleep(2000);
 
@@ -101,7 +101,7 @@ public class Account {
         // -------------------- LOGIN WITH NEW PASSWORD --------------------
 
         //Click [Login] button
-        driver.findElement(By.xpath("//*[@id=\"ctl00_MainContent_PanelNotAuth\"]/div[2]/div[1]/div[2]/a/img")).click();
+        driver.findElement(By.xpath("//img[@src=\"/Images/design/pagelogin.png\"]")).click();
 
         //Set [Email] field
         driver.findElement(By.id("ctl00_MainContent_LoginControl1_TextBoxEmail")).sendKeys(mailName);
