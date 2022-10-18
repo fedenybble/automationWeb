@@ -108,7 +108,7 @@ public class Account {
         driver.findElement(By.id("ctl00_MainContent_LoginControl1_TextBoxEmail")).sendKeys(mailName);
 
         //Set [Password] field
-        driver.findElement(By.id("ctl00_MainContent_LoginControl1_TextBoxPassword")).sendKeys("1234");
+        driver.findElement(By.id("ctl00_MainContent_LoginControl1_TextBoxPassword")).sendKeys("123");
 
         //Click [Login] button
         driver.findElement(By.id("ctl00_MainContent_LoginControl1_ButtonLogin")).click();
