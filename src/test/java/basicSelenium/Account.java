@@ -80,7 +80,7 @@ public class Account {
         // -------------------- CHANGE PASSWORD --------------------
 
         //Click [Settings] button
-        driver.findElement(By.xpath("/html/body/form/div[3]/table/tbody/tr[1]/td/div[1]/div/div/div/a[1]")).click();
+        driver.findElement(By.xpath("//*[@id=\"ctl00_HeaderTopControl1_PanelHeaderButtons\"]/a[1]")).click();
 
         //Set [Old Password] field
         driver.findElement(By.id("TextPwOld")).sendKeys("12345");
