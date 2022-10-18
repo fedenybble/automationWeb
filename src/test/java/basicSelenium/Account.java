@@ -1,6 +1,7 @@
 package basicSelenium;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -114,6 +115,8 @@ public class Account {
 
         Thread.sleep(2000);
 
+        // -------------------- VERIFICATION --------------------
+        Assertions.assertTrue(driver.findElement(By.id("ctl00_HeaderTopControl1_LinkButtonLogout")).isDisplayed(),"ERROR: NO SE PUDO INICIAR SESION");
 
     }
 
