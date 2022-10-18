@@ -1,31 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="basicSelenium.Account" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-10-18T17:51:04" hostname="Federicos-MacBook-Pro.local" time="51.13">
+<testsuite name="basicSelenium.Account" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-10-18T18:56:21" hostname="Federicos-MacBook-Pro.local" time="69.269">
   <properties/>
-  <testcase name="todoLySettings()" classname="basicSelenium.Account" time="51.13">
-    <failure message="org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#ctl00_HeaderTopControl1_LinkButtonLogout&quot;}&#10;  (Session info: chrome=106.0.5249.119)&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element&#10;Build info: version: '4.5.0', revision: 'fe167b119a'&#10;System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.5.1', java.version: '11.0.16'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [a6020db97114e0de51542524bfbf87f2, findElement {using=id, value=ctl00_HeaderTopControl1_LinkButtonLogout}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/j2/q7yxs6y56wg...}, goog:chromeOptions: {debuggerAddress: localhost:61002}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:61002/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: a6020db97114e0de51542524bfbf87f2" type="org.openqa.selenium.NoSuchElementException">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#ctl00_HeaderTopControl1_LinkButtonLogout&quot;}
-  (Session info: chrome=106.0.5249.119)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.5.0', revision: 'fe167b119a'
-System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.5.1', java.version: '11.0.16'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a6020db97114e0de51542524bfbf87f2, findElement {using=id, value=ctl00_HeaderTopControl1_LinkButtonLogout}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.119, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: /var/folders/j2/q7yxs6y56wg...}, goog:chromeOptions: {debuggerAddress: localhost:61002}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:61002/devtoo..., se:cdpVersion: 106.0.5249.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: a6020db97114e0de51542524bfbf87f2
-	at java.base@11.0.16/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base@11.0.16/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base@11.0.16/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base@11.0.16/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at app//org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at app//org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at app//org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
-	at app//org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+  <testcase name="todoLySettings()" classname="basicSelenium.Account" time="69.269">
+    <failure message="org.opentest4j.AssertionFailedError: ERROR, no se pudo logear ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: ERROR, no se pudo logear ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
+	at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+	at app//org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)
+	at app//org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
 	at app//basicSelenium.Account.todoLySettings(Account.java:119)
 	at java.base@11.0.16/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base@11.0.16/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -116,13 +96,13 @@ Session ID: a6020db97114e0de51542524bfbf87f2
   <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Starting ChromeDriver 106.0.5249.61 (511755355844955cd3e264779baf0dd38212a4d0-refs/branch-heads/5249@{#569}) on port 58713
+Starting ChromeDriver 106.0.5249.61 (511755355844955cd3e264779baf0dd38212a4d0-refs/branch-heads/5249@{#569}) on port 64578
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-oct. 18, 2022 2:51:07 P. M. org.openqa.selenium.remote.ProtocolHandshake createSession
+oct. 18, 2022 3:56:23 P. M. org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected upstream dialect: W3C
-oct. 18, 2022 2:51:07 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+oct. 18, 2022 3:56:23 P. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 INFO: Found exact CDP implementation for version 106
 ]]></system-err>
 </testsuite>

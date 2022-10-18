@@ -108,7 +108,7 @@ public class Account {
         driver.findElement(By.id("ctl00_MainContent_LoginControl1_TextBoxEmail")).sendKeys(mailName);
 
         //Set [Password] field
-        driver.findElement(By.id("ctl00_MainContent_LoginControl1_TextBoxPassword")).sendKeys("123");
+        driver.findElement(By.id("ctl00_MainContent_LoginControl1_TextBoxPassword")).sendKeys("1234");
 
         //Click [Login] button
         driver.findElement(By.id("ctl00_MainContent_LoginControl1_ButtonLogin")).click();
@@ -116,7 +116,7 @@ public class Account {
         Thread.sleep(2000);
 
         // -------------------- VERIFICATION --------------------
-        Assertions.assertTrue(driver.findElement(By.id("ctl00_HeaderTopControl1_LinkButtonLogout")).isDisplayed(),"ERROR: NO SE PUDO INICIAR SESION");
+        Assertions.assertTrue(! driver.findElements(By.xpath("//a[text()='Logout']")).isEmpty(),"ERROR: NO SE PUEDE INICIAR SESION");
 
     }
 
