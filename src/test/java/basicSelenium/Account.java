@@ -8,6 +8,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.time.Duration;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -76,7 +78,7 @@ public class Account {
         //Click [Login] button
         driver.findElement(By.id("ctl00_MainContent_LoginControl1_ButtonLogin")).click();
 
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.of(10, ChronoUnit.SECONDS));
 
         // -------------------- CHANGE PASSWORD --------------------
 
@@ -108,7 +110,7 @@ public class Account {
         driver.findElement(By.id("ctl00_MainContent_LoginControl1_TextBoxEmail")).sendKeys(mailName);
 
         //Set [Password] field
-        driver.findElement(By.id("ctl00_MainContent_LoginControl1_TextBoxPassword")).sendKeys("1234");
+        driver.findElement(By.id("ctl00_MainContent_LoginControl1_TextBoxPassword")).sendKeys("123");
 
         //Click [Login] button
         driver.findElement(By.id("ctl00_MainContent_LoginControl1_ButtonLogin")).click();
