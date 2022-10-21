@@ -25,11 +25,11 @@ public class ChangeNameTest extends TestBaseTodoLy {
         menuSection.settingsButton.click();
         settingsModal.nameTextBox.click();
         settingsModal.nameTextBox.clear();
-        settingsModal.nameTextBox.setText("Nuevo update");
+        settingsModal.nameTextBox.setText("Nuevo update fede padin");
         settingsModal.okButton.click();
 
         //Validacion
-        Assertions.assertEquals("Nuevo update", settingsModal.nameTextBox.getAttribute("value"), "ERROR: No se ha editado el nombre");
+        Assertions.assertEquals("Nuevo update fede padin", settingsModal.nameTextBox.getAttribute("value"), "ERROR: No se ha editado el nombre");
 
 
 
