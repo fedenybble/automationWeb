@@ -5,8 +5,6 @@ import controlSelenium.Input;
 import controlSelenium.TextBox;
 import org.openqa.selenium.By;
 
-import java.util.Date;
-
 public class TaskModal {
 
     public Input newContentInput = new Input(By.id("NewItemContentInput"));

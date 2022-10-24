@@ -1,15 +1,12 @@
-package cleanTest;
+package cleanTest.todoLy;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Date;
-
 public class CRUDTask extends TestBaseTodoLy {
 
     @BeforeEach
-    @Test
     public void login(){
         mainPage.loginButton.click();
         loginModal.emailTextBox.setText("ejemplo@ejemplo.com");

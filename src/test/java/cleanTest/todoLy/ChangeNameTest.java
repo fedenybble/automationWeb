@@ -1,12 +1,8 @@
-package cleanTest;
+package cleanTest.todoLy;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import pages.todoLy.SettingsModal;
 
-import java.time.Duration;
-import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 public class ChangeNameTest extends TestBaseTodoLy {

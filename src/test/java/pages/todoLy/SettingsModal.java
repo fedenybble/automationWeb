@@ -4,8 +4,6 @@ import controlSelenium.Button;
 import controlSelenium.TextBox;
 import org.openqa.selenium.By;
 
-import java.util.Date;
-
 public class SettingsModal {
 
     public TextBox nameTextBox = new TextBox(By.id("FullNameInput"));
