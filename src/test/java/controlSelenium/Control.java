@@ -2,7 +2,12 @@ package controlSelenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import singletonSession.Session;
+
+import java.time.Duration;
+import java.time.temporal.ChronoUnit;
 
 public class Control {
 
@@ -49,6 +54,16 @@ public class Control {
         return control.getAttribute(name);
     }
 
+    public void waitClickable() {
+        // todo --> factory para instanciar el wait una sola vez
+        WebDriverWait wait = new WebDriverWait(Session.getInstance().getBrowser(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(this.locator));
+    }
+
+    public void waitIsDisplayed(){
+        WebDriverWait wait = new WebDriverWait(Session.getInstance().getBrowser(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeSelected(this.locator));
+    }
 
 
 
