@@ -23,7 +23,7 @@ public class CRUDProject extends TestBaseTodoist{
     }
 
     @Test
-    public void CRUDProject() throws InterruptedException {
+    public void CRUDProject(){
 
         // ------------- CREATE PROJECT -------------
 
@@ -63,7 +63,7 @@ public class CRUDProject extends TestBaseTodoist{
         projectSection.deleteButton.waitClickable();
         projectSection.deleteButton.click();
 
-        Assertions.assertTrue(projectSection.newProject.isControlDisplayed(), "ERROR: NO se ha eliminado el proyecto correctamente");
+        Assertions.assertFalse(projectSection.newProject.isControlDisplayed(), "ERROR: NO se ha eliminado el proyecto correctamente");
 
 
     }
