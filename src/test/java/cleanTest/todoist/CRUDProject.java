@@ -25,10 +25,10 @@ public class CRUDProject extends TestBaseTodoist{
     @Test
     public void CRUDProject(){
 
-        // ------------- CREATE PROJECT -------------
-
         String newProjectName = "New project"+new Date().getTime();
+        String newProjectNameEdit = "New project edit"+new Date().getTime();
 
+        // ------------- CREATE PROJECT -------------
 
         projectSection.newProjectButton.click();
         addProjectModal.newProjectName.click();
@@ -38,11 +38,7 @@ public class CRUDProject extends TestBaseTodoist{
 
         Assertions.assertTrue(projectSection.newProject.isControlDisplayed(), "ERROR: NO se ha creado el proyecto correctamente");
 
-
        //  ------------- EDIT PROJECT -------------
-
-        String newProjectNameEdit = "New project edit"+new Date().getTime();
-
 
         projectSection.newProject.click();
         projectSection.editProjectOption.click();
@@ -52,7 +48,6 @@ public class CRUDProject extends TestBaseTodoist{
         addProjectModal.addNewProject.waitClickable();
         addProjectModal.addNewProject.click();
         projectSection.newProjectButton.waitClickable();
-
 
         Assertions.assertEquals(newProjectNameEdit, valorDefaultValue, "ERROR: NO se ha editado el nombre correctamente");
 

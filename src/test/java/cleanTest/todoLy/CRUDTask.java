@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Date;
+
 public class CRUDTask extends TestBaseTodoLy {
 
     @BeforeEach
@@ -21,11 +23,14 @@ public class CRUDTask extends TestBaseTodoLy {
 
         // ---------------- CREATE PROJECT ----------------
 
+        String newProjectName = "New project "+new Date().getTime();
+
         createNewProject.createProjectButton.click();
         createNewProject.createProjectInput.click();
-        createNewProject.createProjectInput.setText("New project automation");
+        createNewProject.createProjectInput.setText(newProjectName);
         createNewProject.createProjectAdd.click();
         createNewProject.selectProject.click();
+
 
         // ---------------- CREATE TASK ----------------
 
