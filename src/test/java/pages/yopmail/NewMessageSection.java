@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 
 public class NewMessageSection {
 
+    public Label title = new Label(By.xpath("//div[@style=\"display:flex;position: relative;\"]//div[@class=\"msgtitle ycolor\"]"));
     public Input recipientToInput = new Input(By.id("msgto"));
     public Input subjectInput = new Input(By.xpath("//div[@class=\"inputsend\"]//input[@id=\"msgsubject\"]"));
     public Input emailInput = new Input(By.xpath("//main[@class=\"yscrollbar\"]//div[@id=\"msgbody\"]"));

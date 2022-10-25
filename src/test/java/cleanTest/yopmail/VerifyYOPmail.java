@@ -27,6 +27,7 @@ public class VerifyYOPmail extends TestBaseYOPmail {
         inboxSection.writeNewEmail.click();
 
         Session.getInstance().getBrowser().switchTo().frame("ifmail");
+        newMessageSection.title.waitIsVisible();
         newMessageSection.recipientToInput.waitClickable();
         newMessageSection.recipientToInput.setText(email);
         newMessageSection.subjectInput.setText(subjectText);
