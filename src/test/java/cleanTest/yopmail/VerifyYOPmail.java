@@ -55,20 +55,7 @@ public class VerifyYOPmail extends TestBaseYOPmail {
 
 
 
-
-
-
-
-
-
-
-
-
-
     }
-
-
-
 
 
 }
