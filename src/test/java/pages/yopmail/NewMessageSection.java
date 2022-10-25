@@ -2,6 +2,7 @@ package pages.yopmail;
 
 import controlSelenium.Button;
 import controlSelenium.Input;
+import controlSelenium.Label;
 import org.openqa.selenium.By;
 
 public class NewMessageSection {
@@ -10,6 +11,6 @@ public class NewMessageSection {
     public Input subjectInput = new Input(By.xpath("//div[@class=\"inputsend\"]//input[@id=\"msgsubject\"]"));
     public Input emailInput = new Input(By.xpath("//main[@class=\"yscrollbar\"]//div[@id=\"msgbody\"]"));
 
-    public Button sendTheMessage = new Button (By.xpath("//button[@id=\"msgsend\"]"));
+    public Label sendMessage = new Label (By.xpath("//button[@id=\"msgsend\"]"));
 
 }

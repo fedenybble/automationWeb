@@ -17,31 +17,37 @@ public class VerifyYOPmail extends TestBaseYOPmail {
     public void TestYOPmail() throws InterruptedException {
 
         // ----------------- Type the Email name of your choice -----------------
-
         mainPageYOPmail.newEmail.click();
         mainPageYOPmail.newEmail.setText(email);
         mainPageYOPmail.arrowButton.click();
+
+        // ----------------- WRITE NEW EMAIL  -----------------
         inboxSection.writeNewEmail.waitClickable();
         inboxSection.writeNewEmail.click();
 
         Session.getInstance().getBrowser().switchTo().frame("ifmail");
-
-        Thread.sleep(1000);
-
         newMessageSection.recipientToInput.setText(email);
-        newMessageSection.subjectInput.click();
         newMessageSection.subjectInput.setText(subjectText);
-        newMessageSection.emailInput.click();
         newMessageSection.emailInput.setText(emailText);
-        newMessageSection.sendTheMessage.waitClickable();
-        newMessageSection.sendTheMessage.click();
+        newMessageSection.sendMessage.waitIsVisible();
+        newMessageSection.sendMessage.click();
 
+
+        // ----------------- REFRESH INBOX  -----------------
         Session.getInstance().getBrowser().switchTo().defaultContent();
-
-        Thread.sleep(1000);
 
         inboxSection.refreshInbox.waitClickable();
         inboxSection.refreshInbox.click();
+        newMessageSection.sendMessage.waitToDissapear();
+        inboxSection.refreshInbox.waitClickable();
+        inboxSection.refreshInbox.click();
+
+        Session.getInstance().getBrowser().switchTo().frame("ifinbox");
+        inboxSection.email.waitIsVisible();
+
+        Session.getInstance().getBrowser().switchTo().defaultContent();
+
+        //Assertions.assertEquals(email, inboxSection.email.getText(), "ERROR");
 
         Thread.sleep(4000);
 

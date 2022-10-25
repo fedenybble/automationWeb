@@ -1,6 +1,7 @@
 package pages.yopmail;
 
 import controlSelenium.Button;
+import controlSelenium.Label;
 import org.openqa.selenium.By;
 
 public class InboxSection {
@@ -9,6 +10,6 @@ public class InboxSection {
 
     public Button refreshInbox = new Button(By.id("refresh"));
 
-    public Button popUpMessage = new Button(By.xpath("//div[@id=\"msgpop\"]//div[@class=\"msgpop-dialog\"]"));
+    public Label email = new Label(By.xpath("//div[@class=\"m\"]//div[@class=\"lmfd\"]//span[@class=\"lmf\"]"));
 
 }

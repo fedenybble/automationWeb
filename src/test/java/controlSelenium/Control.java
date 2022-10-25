@@ -65,6 +65,16 @@ public class Control {
         wait.until(ExpectedConditions.elementToBeSelected(this.locator));
     }
 
+    public void waitIsVisible(){
+        WebDriverWait wait = new WebDriverWait(Session.getInstance().getBrowser(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(this.locator));
+    }
+
+    public void waitToDissapear(){
+        WebDriverWait wait = new WebDriverWait(Session.getInstance().getBrowser(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(this.locator));
+    }
+
 
 
 }
