@@ -29,7 +29,7 @@ public class VerifyYOPmail extends TestBaseYOPmail {
         Session.getInstance().getBrowser().switchTo().frame("ifmail");
         newMessageSection.recipientToInput.waitClickable();
         newMessageSection.recipientToInput.setText(email);
-        newMessageSection.subjectInput.setText(subjectText+"asd");
+        newMessageSection.subjectInput.setText(subjectText);
         newMessageSection.emailInput.setText(emailText);
         newMessageSection.sendMessage.waitIsVisible();
         newMessageSection.sendMessage.click();
