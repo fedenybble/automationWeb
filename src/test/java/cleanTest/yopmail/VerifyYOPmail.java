@@ -1,5 +1,6 @@
 package cleanTest.yopmail;
 
+import dev.failsafe.internal.util.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import singletonSession.Session;
@@ -22,12 +23,13 @@ public class VerifyYOPmail extends TestBaseYOPmail {
         mainPageYOPmail.arrowButton.click();
 
         // ----------------- WRITE NEW EMAIL  -----------------
-        inboxSection.writeNewEmail.waitClickable();
+        inboxSection.writeNewEmail.waitIsVisible();
         inboxSection.writeNewEmail.click();
 
         Session.getInstance().getBrowser().switchTo().frame("ifmail");
+        newMessageSection.recipientToInput.waitClickable();
         newMessageSection.recipientToInput.setText(email);
-        newMessageSection.subjectInput.setText(subjectText);
+        newMessageSection.subjectInput.setText(subjectText+"asd");
         newMessageSection.emailInput.setText(emailText);
         newMessageSection.sendMessage.waitIsVisible();
         newMessageSection.sendMessage.click();
@@ -36,7 +38,7 @@ public class VerifyYOPmail extends TestBaseYOPmail {
         // ----------------- REFRESH INBOX  -----------------
         Session.getInstance().getBrowser().switchTo().defaultContent();
 
-        inboxSection.refreshInbox.waitClickable();
+        inboxSection.refreshInbox.waitIsVisible();
         inboxSection.refreshInbox.click();
         newMessageSection.sendMessage.waitToDissapear();
         inboxSection.refreshInbox.waitClickable();
@@ -45,9 +47,9 @@ public class VerifyYOPmail extends TestBaseYOPmail {
         Session.getInstance().getBrowser().switchTo().frame("ifinbox");
         inboxSection.email.waitIsVisible();
 
-        Session.getInstance().getBrowser().switchTo().defaultContent();
+        Assertions.assertTrue(inboxSection.searchSubject(subjectText), "ERROR");
 
-        //Assertions.assertEquals(email, inboxSection.email.getText(), "ERROR");
+        Session.getInstance().getBrowser().switchTo().defaultContent();
 
         Thread.sleep(4000);
 

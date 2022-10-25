@@ -12,4 +12,9 @@ public class InboxSection {
 
     public Label email = new Label(By.xpath("//div[@class=\"m\"]//div[@class=\"lmfd\"]//span[@class=\"lmf\"]"));
 
+    public boolean searchSubject(String subject){
+        Label subjectEmail = new Label(By.xpath("//div[@class=\"lms\" and text() = '" + subject + "']"));
+        return subjectEmail.isControlDisplayed();
+    }
+
 }
