@@ -2,10 +2,7 @@ package cleanTest.todoist;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import pages.todoist.AddProjectModal;
-import pages.todoist.LoginModal;
-import pages.todoist.MainPage;
-import pages.todoist.ProjectSection;
+import pages.todoist.*;
 import singletonSession.Session;
 
 public class TestBaseTodoist {
@@ -16,6 +13,12 @@ public class TestBaseTodoist {
     public ProjectSection projectSection = new ProjectSection();
 
     public AddProjectModal addProjectModal = new AddProjectModal();
+
+    public ProjectModal projectModal = new ProjectModal();
+
+    public EditModal editModal = new EditModal();
+
+    public DeleteSection deleteSection = new DeleteSection();
 
 
     @BeforeEach
