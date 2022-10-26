@@ -24,9 +24,9 @@ public class Ejercicio1SwagLabs extends TestBaseSwagLabs {
         mainPage.lowToHighOption.waitIsVisible();
         mainPage.lowToHighOption.click();
 
-        productSection.productButton.waitIsVisible();
-        productSection.productButton.click();
-        String textContent = productSection.productName.getAttribute("textContent");
+        productSection.firstProductButton.waitIsVisible();
+        productSection.firstProductButton.click();
+        String textContent = productSection.firstProductName.getAttribute("textContent");
         //String textContent = productSection.productNameError.getAttribute("textContent");
         mainPage.cartIcon.click();
 
