@@ -19,11 +19,6 @@ public class ProjectModal {
 
     public Button addNewItemButton = new Button(By.xpath("//button[@data-testid=\"task-editor-submit-button\"]"));
 
-    public Button getLastTaskByName(String taskName) {
-        Button selectedTask = new Button(By.xpath("//ul//li[last()]//li[@aria-selected=\"false\"][last()]//div[@class=\"markdown_content task_content\" and text()='"++ "']"));
-        return selectedTask;
-    }
-
     public Button taskCreated(String taskName) {
         Button task = new Button(By.xpath("//div[text()='" + taskName + "']"));
         return task;
