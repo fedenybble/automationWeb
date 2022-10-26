@@ -70,6 +70,11 @@ public class Control {
         wait.until(ExpectedConditions.visibilityOfElementLocated(this.locator));
     }
 
+    public void waitToBePresent(){
+        WebDriverWait wait = new WebDriverWait(Session.getInstance().getBrowser(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.presenceOfElementLocated(this.locator));
+    }
+
     public void waitToDissapear(){
         WebDriverWait wait = new WebDriverWait(Session.getInstance().getBrowser(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(this.locator));

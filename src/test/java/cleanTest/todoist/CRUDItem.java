@@ -1,5 +1,7 @@
 package cleanTest.todoist;
 
+import dev.failsafe.internal.util.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import singletonSession.Session;
@@ -46,14 +48,14 @@ public class CRUDItem extends TestBaseTodoist {
         projectModal.selectPriorityButton.click();
         projectModal.addNewItemButton.click();
         System.out.println("Item creado");
-        projectModal.taskCreated(newItemName).waitIsVisible();
 
+        Thread.sleep(3000);
+
+        //Assertions.assertEquals(projectModal.newNameInput.getAttribute("textContent"), newProjectName, "ERROR");
 
         // ------------- EDIT ITEM -------------
-
-        projectModal.taskCreated(newItemName).click();
+        projectModal.taskCreated(newProjectName).click();
         System.out.println("Modal de Editar se abre");
-        editModal.editExpirationDateButton.waitIsDisplayed();
         editModal.editExpirationDateButton.click();
         editModal.selectExpirationDateButton.click();
         System.out.println("Fecha nueva seteada");
