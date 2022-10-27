@@ -80,5 +80,14 @@ public class Control {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(this.locator));
     }
 
+    public void waitAttributeToChange(String attribute, String value){
+        WebDriverWait wait = new WebDriverWait(Session.getInstance().getBrowser(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.attributeToBe(this.locator, attribute, value));
+    }
+    public void waitPropertyToChange(String property, String value){
+        WebDriverWait wait = new WebDriverWait(Session.getInstance().getBrowser(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.domPropertyToBe(this.control, property, value));
+    }
+
 
 }
