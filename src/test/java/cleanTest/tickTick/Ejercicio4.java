@@ -12,7 +12,7 @@ public class Ejercicio4 extends TestBaseTickTick {
     String newEmail = new Date().getTime()+"@gmail.com";
     String password = "passwordforautomation";
     String newPassword = "NewpasswordForAutomation!";
-    String newTitle = "This is the new title";
+    String newHabitName = "newHabit"+new Date().getTime();
 
     @BeforeEach
     public void signUp() throws InterruptedException {
@@ -70,6 +70,20 @@ public class Ejercicio4 extends TestBaseTickTick {
         taskSection.okButton.click();
 
         Thread.sleep(3000);
+    }
+
+    @Test
+    @Order(4)
+    public void createNewHabit() throws InterruptedException {
+
+        projectSection.skipButton.click();
+        sideBar.habitButton.click();
+        habitSection.createNewHabit.click();
+        habitSection.setNewHabitName.setText(newHabitName);
+        habitSection.saveNewHabitButton.click();
+
+        Thread.sleep(3000);
+
 
     }
 
