@@ -15,6 +15,7 @@ public class TestBaseTickTick {
     LoginPage loginPage = new LoginPage();
     TaskSection taskSection = new TaskSection();
     HabitSection habitSection = new HabitSection();
+    PreferenceSection preferenceSection = new PreferenceSection();
 
 
 
