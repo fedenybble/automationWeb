@@ -9,16 +9,11 @@ public class TestBaseTodoist {
 
     public MainPage mainPageTodoist = new MainPage();
     public LoginModal loginModal = new LoginModal();
-
     public ProjectSection projectSection = new ProjectSection();
-
     public AddProjectModal addProjectModal = new AddProjectModal();
-
     public ProjectModal projectModal = new ProjectModal();
-
     public EditModal editModal = new EditModal();
-
-    public DeleteSection deleteSection = new DeleteSection();
+    public TaskSection taskSection = new TaskSection();
 
 
     @BeforeEach
