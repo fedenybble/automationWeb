@@ -142,7 +142,7 @@ public class Ejercicio4 extends TestBaseTickTick {
         preferenceSection.optionTimeButton.click();
         settingsPage.doneButton.click();
 
-        Assertions.assertTrue(preferenceSection.timeFormatLabel.isControlDisplayed(), "ERROR: Time format was not edited.");
+        Assertions.assertTrue(sideBar.profileButton.isControlDisplayed(), "ERROR: Time format was not edited.");
 
         Thread.sleep(3000);
 
