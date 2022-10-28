@@ -14,69 +14,52 @@ public class CRUDItem extends TestBaseTodoist {
     @BeforeEach
     public void verifyLoginTodoist() throws InterruptedException {
         mainPageTodoist.loginButtonNavbar.click();
-        loginModal.inputEmail.click();
         loginModal.inputEmail.setText("fedepadin98@gmail.com");
-        loginModal.inputPassword.click();
         loginModal.inputPassword.setText("ejemploparaautomation");
         loginModal.buttonLogin.click();
-        //projectSection.newProjectButton.waitIsVisible();
-        Thread.sleep(3000);
+
     }
 
     @Test
     public void CRUDItem() throws InterruptedException {
 
         String newProjectName = "New project"+new Date().getTime();
-        String newItemName = "New item"+new Date().getTime();
+        String newTaskName = "New name"+new Date().getTime();
 
-        // ------------- CREATE PROJECT -------------
+        // ---------- CREATE NEW PROJECT ----------
+        projectSection.createNewProjectButton.click();
+        projectModal.newProjectNameInput.setText(newProjectName);
+        projectModal.createNewProjectButton.click();
 
-        projectSection.newProjectButton.click();
-        addProjectModal.newProjectName.click();
-        addProjectModal.newProjectName.setText(newProjectName);
-        addProjectModal.addNewProject.waitClickable();
-        addProjectModal.addNewProject.click();
+        // ---------- CREATE NEW TASK ----------
+        taskSection.createNewTaskButton.click();
+        taskSection.newTaskNameButton.setText(newTaskName);
+        String actualTaskName = taskSection.newTaskNameButton.getText();
+        taskSection.expirationDateButton.click();
+        taskSection.tomorrowOptionDateButton.click();
+        taskSection.priorityButton.click();
+        taskSection.firstPriorityButton.click();
+        taskSection.addNewTaskButton.click();
+        Assertions.assertEquals(newTaskName, actualTaskName, "ERROR: new task was not created.");
 
-        // ------------- CREATE NEW ITEM -------------
+        // ---------- EDIT TASK ----------
+        taskSection.findTaskByName(newTaskName).click();
+        editModal.editExpirationDateButton.click();
+        editModal.newExpirationDateButton.click();
+        editModal.editPriorityButton.click();
+        editModal.scndPriorityOptionButton.click();
+        editModal.closeWindowButton.click();
+        Assertions.assertEquals("lunes", taskSection.expirationDateLabel.getText(), "ERROR: expiration date was not updated.");
 
-        projectModal.newItemButton.click();
-        projectModal.newNameInput.waitIsVisible();
-        projectModal.newNameInput.setText(newItemName);
-        projectModal.setExpirationDateButton.click();
-        projectModal.selectExpirationDateButton.click();
-        projectModal.setPriorityButton.click();
-        projectModal.selectPriorityButton.click();
-        projectModal.addNewItemButton.click();
-        System.out.println("Item creado");
+        // ---------- DELETE TASK ----------
+        taskSection.findTaskByName(newTaskName).click();
+        // editModal.closeWindowButton.click();
+        editModal.moreOptionsButton.click();
+        editModal.deleteOptionButton.click();
+        editModal.confirmDeleteButton.click();
+        Assertions.assertTrue(taskSection.noTaskLabel.isControlDisplayed(), "ERROR: the task was not deleted.");
 
         Thread.sleep(3000);
-
-        //Assertions.assertEquals(projectModal.newNameInput.getAttribute("textContent"), newProjectName, "ERROR");
-
-        // ------------- EDIT ITEM -------------
-        projectModal.taskCreated(newProjectName).click();
-        System.out.println("Modal de Editar se abre");
-        editModal.editExpirationDateButton.click();
-        editModal.selectExpirationDateButton.click();
-        System.out.println("Fecha nueva seteada");
-        editModal.editPriorityButton.click();
-        editModal.setNewPriorityButton.click();
-        System.out.println("Prioridad nueva seteada");
-        editModal.closeModal.click();
-
-        // ------------- DELETE ITEM -------------
-
-        projectModal.taskCreated(newItemName).click();
-        System.out.println("Modal de Editar PARA BORRAR se abre");
-        editModal.threeDotsOption.waitIsVisible();
-        editModal.threeDotsOption.click();
-        System.out.println("Clickea el icono de Mas Opciones");
-        editModal.deleteTaskOption.click();
-        System.out.println("Clickea el icono de Delete");
-        deleteSection.acceptDeleteButton.click();
-        System.out.println("Clickea el boton Eliminar");
-
-        Thread.sleep(5000);
 
     }
 
