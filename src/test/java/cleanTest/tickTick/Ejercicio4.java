@@ -159,7 +159,7 @@ public class Ejercicio4 extends TestBaseTickTick {
         settingsPage.newThemeOption.click();
         settingsPage.doneButton.click();
 
-        Assertions.assertTrue(sideBar.profileButton.isControlDisplayed(), "ERROR: The theme was not edited. s");
+        Assertions.assertTrue(sideBar.profileButton.isControlDisplayed(), "ERROR: The theme was not edited. ");
 
         Thread.sleep(3000);
 
