@@ -40,16 +40,16 @@ public class Ejercicio4 extends TestBaseTickTick {
 
         return sb.toString();
     }
-
-    @BeforeEach
-    public void signUp() throws InterruptedException {
-        mainPage.signUpForFreeButton.click();
-        signUpPage.newEmailInput.setText(newEmail);
-        signUpPage.newPasswordInput.setText(password);
-        signUpPage.signUpButton.click();
-
-        Thread.sleep(5000);
-    }
+//
+//    @BeforeEach
+//    public void signUp() throws InterruptedException {
+//        mainPage.signUpForFreeButton.click();
+//        signUpPage.newEmailInput.setText(newEmail);
+//        signUpPage.newPasswordInput.setText(password);
+//        signUpPage.signUpButton.click();
+//
+//        Thread.sleep(5000);
+//    }
 
     @Test
     @Order(1)
@@ -152,14 +152,33 @@ public class Ejercicio4 extends TestBaseTickTick {
     @Order(6)
     public void editTheme() throws InterruptedException{
 
-        projectSection.skipButton.click();
+        mainPage.signInButton.click();
+        loginPage.loginInInput.setText("ejemplo@ejemplo.com");
+        loginPage.passwordInput.setText("ejemplo");
+        loginPage.signInButton.click();
+
+        sideBar.profileButton.waitClickable();
+
+        // User clicks Skip Button.
+        // projectSection.skipButton.click();
+
+        // User clicks Profile Button located at the top right of the side-bar.
         sideBar.profileButton.click();
+        // User clicks 'Settings' option displayed from 'Profile' button/
         sideBar.settingsButton.click();
+        // User clicks 'Theme' option.
         settingsPage.themeButton.click();
-        settingsPage.newThemeOption.click();
+        // User selects the option: Gray Theme.
+        settingsPage.grayThemeOption.click();
+        String backgroundColor = settingsPage.grayThemeOption.getAttribute("style");
+
+        //Expected Result: The theme should change to Gray Theme.
+        Assertions.assertEquals("background-color: rgb(49, 54, 67);", backgroundColor, "ERROR: The theme was not edited to 'Gray Theme'" );
+
+        // User clicks 'Done' button.
         settingsPage.doneButton.click();
 
-        Assertions.assertTrue(sideBar.profileButton.isControlDisplayed(), "ERROR: The theme was not edited. ");
+
 
         Thread.sleep(3000);
 
