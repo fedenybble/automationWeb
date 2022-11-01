@@ -1,5 +1,6 @@
 package controlSelenium;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,20 +14,30 @@ public class Control {
 
     protected By locator;
     protected WebElement control;
+    protected String controlName; // reflection
 
     public Control (By locator){
         this.locator=locator;
+    }
+
+    public Control (By locator, String controlName) {
+        this.locator = locator;
+        this.controlName = controlName;
     }
 
     protected void findControl(){
         control= Session.getInstance().getBrowser().findElement(this.locator);
     }
 
+    @Step("{0}")
+    public void step(String action){}
+
     /**
      *
      */
     public void click(){
         this.findControl();
+        this.step("CLICK on "+controlName);
         control.click();
     }
 
@@ -35,17 +46,22 @@ public class Control {
         control.clear();
     }
 
+
+
     public boolean isControlDisplayed(){
         try {
             this.findControl();
+            this.step("Check the "+controlName+" is displayed: true");
             return control.isDisplayed();
         }catch (Exception e){
+            this.step("Check the "+controlName+" is displayed: false");
             return false;
         }
     }
 
     public String getText(){
         this.findControl();
+        this.step("Get text from "+controlName+", the value is: "+control.getText());
         return control.getText();
     }
 
@@ -88,6 +104,11 @@ public class Control {
         WebDriverWait wait = new WebDriverWait(Session.getInstance().getBrowser(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.domPropertyToBe(this.control, property, value));
     }
+
+//    public void waitURLToBe(String url){
+//        WebDriverWait wait = new WebDriverWait(browser, Duration.ofSeconds(10));
+//        wait.until(ExpectedConditions.urlToBe(url));
+//    }
 
 
 

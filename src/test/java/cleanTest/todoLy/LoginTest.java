@@ -1,12 +1,24 @@
 package cleanTest.todoLy;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
 public class LoginTest extends TestBaseTodoLy{
 
     @Test
-    public void verifyLoginSuccessfully(){
+    @Order(1)
+    @DisplayName("Verify login is successfully")
+    @Description("This test case is to verify the login using valid credentials with any role")
+    @Owner("Eynar")
+    @Link("www.jira.com/doc01")
+    @Issue("www.jira.com/bug0005")
+    @Lead("Testttt")
+    @Epic("Login")
+    public void verifyLoginSuccessfully() throws InterruptedException {
+        Thread.sleep(5000);
         mainPage.loginButton.click();
         loginModal.emailTextBox.setText("selenium@selenium2022.com");
         loginModal.passwordTextBox.setText("12345");

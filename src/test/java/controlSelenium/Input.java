@@ -8,6 +8,10 @@ public class Input extends Control{
         super(locator);
     }
 
+    public Input(By locator, String controlName) {
+        super(locator, controlName);
+    }
+
     public void setText(String value){
         this.findControl();
         this.control.sendKeys(value);
