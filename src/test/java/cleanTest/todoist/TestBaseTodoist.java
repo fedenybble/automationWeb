@@ -1,7 +1,10 @@
 package cleanTest.todoist;
 
+import io.qameta.allure.Attachment;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import pages.todoist.*;
 import singletonSession.Session;
 
@@ -23,6 +26,13 @@ public class TestBaseTodoist {
 
     @AfterEach
     public void cleanup(){
+        attach();
         Session.getInstance().closeBrowser();
+    }
+
+    @Attachment(value = "screenshot", type = "image/png")
+    private byte[] attach(){
+        //Tomar captura de pantalla - Adjuntarlo en el reporte
+        return ((TakesScreenshot) Session.getInstance().getBrowser()).getScreenshotAs(OutputType.BYTES);
     }
 }

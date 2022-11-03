@@ -12,6 +12,15 @@ public class FactoryBrowser {
             case "cloud":
                 browser= new Cloud();
                 break;
+            case "headless":
+                browser = new Headless();
+                break;
+            case "safari":
+                browser = new Safari();
+                break;
+            case "docker":
+                browser = new BrowserDocker();
+                break;
             default:
                 browser= new Firefox();
                 break;
