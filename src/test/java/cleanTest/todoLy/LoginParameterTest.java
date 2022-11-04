@@ -1,14 +1,12 @@
 package cleanTest.todoLy;
 
 import io.qameta.allure.*;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import utils.GetProperties;
 
+@Tag("Sanity")
 public class LoginParameterTest extends TestBaseTodoLy{
 
     //@Test
@@ -32,6 +30,10 @@ public class LoginParameterTest extends TestBaseTodoLy{
     @Issue("www.jira.com/bug0005")
     @Lead("Testttt")
     @Epic("Login")
+    @Feature("Authentication")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Story Login")
+    @Tag("SmokeTest")
     public void verifyLoginSuccessfully(String user, String password) throws InterruptedException {
         Thread.sleep(5000);
         mainPage.loginButton.click();
