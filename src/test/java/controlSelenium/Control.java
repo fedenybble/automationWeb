@@ -4,6 +4,7 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import singletonSession.Session;
@@ -67,6 +68,12 @@ public class Control {
     public String getAttribute(String name){
         this.findControl();
         return control.getAttribute(name);
+    }
+
+    public void hoverAction(){
+        this.findControl();
+        Actions action = new Actions(Session.getInstance().getBrowser());
+        action.moveToElement(this.control).perform();
     }
 
     public void waitClickable() {
