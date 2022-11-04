@@ -83,6 +83,13 @@ public class RegisterAndLogin extends TestBasePhpTravels{
 
         Assertions.assertTrue(mainPage.checkYourInfoLabel(firstName, lastName).isControlDisplayed());
 
+        mainPage.dropDownButton.waitClickable();
+        mainPage.dropDownButton.click();
+        mainPage.logoutButton.waitClickable();
+        mainPage.logoutButton.click();
+
+        Assertions.assertTrue(loginPage.loginButton.isControlDisplayed());
+
         Thread.sleep(5000);
 
 
